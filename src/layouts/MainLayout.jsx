@@ -10,7 +10,7 @@ const MainLayout = () => {
       <header className="app-header">
         <div className="container">
           <h1 className="logo">
-            <img src={leafLogo} alt="Relief Logo" style={{ height: '40px', width: 'auto' }} />
+            <img src={leafLogo} alt="Relief Logo" style={{ height: '65px', width: 'auto' }} />
             Relief
           </h1>
         </div>

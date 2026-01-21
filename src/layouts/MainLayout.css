@@ -28,7 +28,12 @@
     letter-spacing: -0.02em;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 0px;
+}
+
+.logo img {
+    margin-right: -10px;
+    /* Pull text closer if image has whitespace */
 }
 
 
