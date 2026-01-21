@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
 import { Home, MessageCircle, BookHeart, Wind, Heart, Anchor } from 'lucide-react';
-import ReliefIcon from '../components/ReliefIcon';
+import leafLogo from '../assets/leaf_logo.png';
 import './MainLayout.css'; // We'll create this for specific layout styles
 
 const MainLayout = () => {
@@ -10,7 +10,7 @@ const MainLayout = () => {
       <header className="app-header">
         <div className="container">
           <h1 className="logo">
-            <ReliefIcon size={40} style={{ transform: 'rotate(20deg)' }} />
+            <img src={leafLogo} alt="Relief Logo" style={{ height: '40px', width: 'auto' }} />
             Relief
           </h1>
         </div>
