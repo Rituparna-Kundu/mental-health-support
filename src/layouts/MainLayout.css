@@ -1,0 +1,138 @@
+.app-shell {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 90px;
+    /* Increased space for floating nav */
+}
+
+/* Glassmorphic Header */
+.app-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(var(--blur-amount));
+    -webkit-backdrop-filter: blur(var(--blur-amount));
+    background: rgba(253, 251, 247, 0.85);
+    /* Matches warm bg */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding: var(--spacing-md) 0;
+    transition: all var(--transition-normal);
+}
+
+.logo {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: #81C784;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+
+.app-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Premium Bottom Navigation */
+.bottom-nav {
+    position: fixed;
+    bottom: var(--spacing-lg);
+    /* Floating effect */
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    pointer-events: none;
+    /* Let clicks pass through around the nav */
+    padding: 0 var(--spacing-md);
+}
+
+.nav-content {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: var(--radius-full);
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-float);
+    pointer-events: auto;
+    max-width: 500px;
+    /* Mobile constraint */
+    margin: 0 auto;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    color: var(--color-text-muted);
+    transition: all var(--transition-bounce);
+    position: relative;
+    border-radius: 50%;
+    /* Circular hit area */
+    width: 60px;
+    height: 60px;
+    text-decoration: none;
+}
+
+.nav-item span {
+    font-size: 0.7rem;
+    font-weight: 600;
+    opacity: 0;
+    position: absolute;
+    bottom: -20px;
+    transition: all var(--transition-fast);
+    transform: translateY(-5px);
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+/* On active, maybe show text? Or simplify to just icons for cleaner mobile look? 
+   Let's keep icons prominent. */
+
+.nav-item:hover {
+    color: var(--color-primary);
+    background: rgba(107, 144, 128, 0.05);
+}
+
+.nav-item.active {
+    color: var(--color-white);
+    background: var(--color-primary);
+    box-shadow: 0 4px 12px rgba(107, 144, 128, 0.4);
+    transform: translateY(-8px);
+    /* Pop up effect */
+}
+
+/* Active icon style */
+.nav-item svg {
+    transition: all var(--transition-bounce);
+}
+
+.nav-item.active svg {
+    transform: scale(1.1);
+}
+
+/* Special Alert Item */
+.nav-item.alert {
+    color: var(--color-error);
+}
+
+.nav-item.alert:hover {
+    background: rgba(229, 115, 115, 0.1);
+}
+
+.nav-item.alert.active {
+    background: var(--color-error);
+    color: white;
+    box-shadow: 0 4px 12px rgba(229, 115, 115, 0.4);
+}
